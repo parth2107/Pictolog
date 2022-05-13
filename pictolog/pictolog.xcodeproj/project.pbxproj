@@ -18,6 +18,11 @@
 		594A5B28282EA6CF00ECC497 /* pictologUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 594A5B27282EA6CF00ECC497 /* pictologUITests.swift */; };
 		594A5B2A282EA6CF00ECC497 /* pictologUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 594A5B29282EA6CF00ECC497 /* pictologUITestsLaunchTests.swift */; };
 		594A5B38282EACF900ECC497 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 594A5B37282EACF900ECC497 /* HomeViewController.swift */; };
+		594A5B3F282EB37500ECC497 /* Quicksand-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 594A5B3A282EB37500ECC497 /* Quicksand-SemiBold.ttf */; };
+		594A5B40282EB37500ECC497 /* Quicksand-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 594A5B3B282EB37500ECC497 /* Quicksand-Bold.ttf */; };
+		594A5B41282EB37500ECC497 /* Quicksand-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 594A5B3C282EB37500ECC497 /* Quicksand-Light.ttf */; };
+		594A5B42282EB37500ECC497 /* Quicksand-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 594A5B3D282EB37500ECC497 /* Quicksand-Medium.ttf */; };
+		594A5B43282EB37500ECC497 /* Quicksand-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 594A5B3E282EB37500ECC497 /* Quicksand-Regular.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +58,11 @@
 		594A5B27282EA6CF00ECC497 /* pictologUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pictologUITests.swift; sourceTree = "<group>"; };
 		594A5B29282EA6CF00ECC497 /* pictologUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pictologUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		594A5B37282EACF900ECC497 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		594A5B3A282EB37500ECC497 /* Quicksand-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand-SemiBold.ttf"; sourceTree = "<group>"; };
+		594A5B3B282EB37500ECC497 /* Quicksand-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand-Bold.ttf"; sourceTree = "<group>"; };
+		594A5B3C282EB37500ECC497 /* Quicksand-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand-Light.ttf"; sourceTree = "<group>"; };
+		594A5B3D282EB37500ECC497 /* Quicksand-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand-Medium.ttf"; sourceTree = "<group>"; };
+		594A5B3E282EB37500ECC497 /* Quicksand-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand-Regular.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +113,7 @@
 		594A5B02282EA6CD00ECC497 /* pictolog */ = {
 			isa = PBXGroup;
 			children = (
+				594A5B39282EB34200ECC497 /* Fonts */,
 				594A5B36282EA6E800ECC497 /* ViewControllers */,
 				594A5B03282EA6CD00ECC497 /* AppDelegate.swift */,
 				594A5B05282EA6CD00ECC497 /* SceneDelegate.swift */,
@@ -139,6 +150,18 @@
 				594A5B37282EACF900ECC497 /* HomeViewController.swift */,
 			);
 			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		594A5B39282EB34200ECC497 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				594A5B3B282EB37500ECC497 /* Quicksand-Bold.ttf */,
+				594A5B3C282EB37500ECC497 /* Quicksand-Light.ttf */,
+				594A5B3D282EB37500ECC497 /* Quicksand-Medium.ttf */,
+				594A5B3E282EB37500ECC497 /* Quicksand-Regular.ttf */,
+				594A5B3A282EB37500ECC497 /* Quicksand-SemiBold.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -246,8 +269,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				594A5B13282EA6CE00ECC497 /* LaunchScreen.storyboard in Resources */,
+				594A5B3F282EB37500ECC497 /* Quicksand-SemiBold.ttf in Resources */,
+				594A5B42282EB37500ECC497 /* Quicksand-Medium.ttf in Resources */,
+				594A5B43282EB37500ECC497 /* Quicksand-Regular.ttf in Resources */,
 				594A5B10282EA6CE00ECC497 /* Assets.xcassets in Resources */,
+				594A5B41282EB37500ECC497 /* Quicksand-Light.ttf in Resources */,
 				594A5B0B282EA6CD00ECC497 /* Main.storyboard in Resources */,
+				594A5B40282EB37500ECC497 /* Quicksand-Bold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
