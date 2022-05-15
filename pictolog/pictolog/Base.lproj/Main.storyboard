@@ -5,8 +5,17 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Quicksand-Bold.ttf">
+            <string>Quicksand-Bold</string>
+        </array>
+        <array key="Quicksand-Regular.ttf">
+            <string>Quicksand-Regular</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Initial View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -16,15 +25,29 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RBs-cT-OBE">
-                                <rect key="frame" x="146" y="433" width="124" height="31"/>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UKg-ZV-Rs8">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Getting Started"/>
-                                <connections>
-                                    <action selector="btnGettingStartedTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="P1K-bo-buQ"/>
-                                </connections>
-                            </button>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="pictolog-logos_white" translatesAutoresizingMaskIntoConstraints="NO" id="SiM-JE-sE5">
+                                        <rect key="frame" x="4" y="76" width="406" height="325"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RBs-cT-OBE" customClass="pictologButton" customModule="pictolog" customModuleProvider="target">
+                                        <rect key="frame" x="62" y="662" width="291" height="65"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="22"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Getting Started">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="btnGettingStartedTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="P1K-bo-buQ"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.95294117647058818" green="0.59215686274509804" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -79,6 +102,62 @@
                                     </label>
                                 </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Sa-Fk-Kpi">
+                                <rect key="frame" x="180" y="788" width="54" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="ADD"/>
+                                <connections>
+                                    <action selector="btnAddSiteTapped:" destination="LSw-ia-Wpb" eventType="touchUpInside" id="mjZ-3B-iXm"/>
+                                </connections>
+                            </button>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Ryi-x3-ccy">
+                                <rect key="frame" x="30" y="301" width="354" height="294"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ei2-P0-x3a">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="SiteCollectionViewCell" id="VVR-fO-rnT" customClass="SiteCollectionViewCell" customModule="pictolog" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="5lu-BX-fOP">
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Oct-3c-fcH">
+                                                    <rect key="frame" x="5" y="5" width="118" height="118"/>
+                                                    <color key="backgroundColor" systemColor="systemPurpleColor"/>
+                                                </view>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="sadasd" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sr7-5m-law">
+                                                    <rect key="frame" x="1" y="1" width="60" height="60"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="60" id="KKx-eU-Kzb"/>
+                                                        <constraint firstAttribute="height" constant="60" id="jlj-ar-mLX"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="Quicksand-Regular" family="Quicksand" pointSize="18"/>
+                                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Sr7-5m-law" firstAttribute="leading" secondItem="5lu-BX-fOP" secondAttribute="leading" constant="1" id="FZI-o2-Kam"/>
+                                                <constraint firstItem="Sr7-5m-law" firstAttribute="top" secondItem="5lu-BX-fOP" secondAttribute="top" constant="1" id="QIJ-Lw-Z3u"/>
+                                                <constraint firstAttribute="bottom" secondItem="Oct-3c-fcH" secondAttribute="bottom" constant="5" id="d2M-be-GzQ"/>
+                                                <constraint firstAttribute="trailing" secondItem="Oct-3c-fcH" secondAttribute="trailing" constant="5" id="nMj-oK-ORd"/>
+                                                <constraint firstItem="Oct-3c-fcH" firstAttribute="top" secondItem="5lu-BX-fOP" secondAttribute="top" constant="5" id="rAL-b1-2gc"/>
+                                                <constraint firstItem="Oct-3c-fcH" firstAttribute="leading" secondItem="5lu-BX-fOP" secondAttribute="leading" constant="5" id="y0c-UR-eZS"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <connections>
+                                            <outlet property="lblSiteName" destination="Sr7-5m-law" id="y8d-2g-zoa"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="RSv-wv-zPt"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -87,10 +166,17 @@
                             <constraint firstItem="A3q-4o-TzJ" firstAttribute="leading" secondItem="RSv-wv-zPt" secondAttribute="leading" constant="30" id="K5t-he-0KD"/>
                             <constraint firstItem="RSv-wv-zPt" firstAttribute="trailing" secondItem="zzj-Yg-C9l" secondAttribute="trailing" constant="30" id="NRF-NN-jog"/>
                             <constraint firstItem="zzj-Yg-C9l" firstAttribute="top" secondItem="RSv-wv-zPt" secondAttribute="top" constant="16" id="Q1o-Fc-vnW"/>
+                            <constraint firstItem="Ryi-x3-ccy" firstAttribute="leading" secondItem="RSv-wv-zPt" secondAttribute="leading" constant="30" id="VWG-cS-hhC"/>
                             <constraint firstItem="A3q-4o-TzJ" firstAttribute="top" secondItem="zzj-Yg-C9l" secondAttribute="bottom" constant="32" id="Zrv-LC-E5t"/>
+                            <constraint firstItem="Ryi-x3-ccy" firstAttribute="centerY" secondItem="sS1-fg-vJa" secondAttribute="centerY" id="efu-if-n7c"/>
+                            <constraint firstItem="Ryi-x3-ccy" firstAttribute="centerX" secondItem="sS1-fg-vJa" secondAttribute="centerX" id="hln-66-Scw"/>
+                            <constraint firstItem="RSv-wv-zPt" firstAttribute="trailing" secondItem="Ryi-x3-ccy" secondAttribute="trailing" constant="30" id="ngj-Zx-DwC"/>
+                            <constraint firstItem="Ryi-x3-ccy" firstAttribute="top" secondItem="A3q-4o-TzJ" secondAttribute="bottom" constant="51.5" id="xyY-vT-Yf0"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="btnAddSite" destination="9Sa-Fk-Kpi" id="vUX-MW-GJb"/>
+                        <outlet property="collectionViewSites" destination="Ryi-x3-ccy" id="RwU-9K-I8k"/>
                         <outlet property="imgViewProfilePic" destination="zzj-Yg-C9l" id="MV4-tI-K8j"/>
                     </connections>
                 </viewController>
@@ -101,9 +187,10 @@
         <!--Navigation Controller-->
         <scene sceneID="eeH-vV-xnR">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="McS-9u-3yl" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="McS-9u-3yl" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="MyU-Zc-nIR">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -115,11 +202,143 @@
             </objects>
             <point key="canvasLocation" x="31.884057971014496" y="3.3482142857142856"/>
         </scene>
+        <!--Add Site View Controller-->
+        <scene sceneID="7Rc-fH-0wU">
+            <objects>
+                <viewController storyboardIdentifier="AddSiteViewController" id="cDg-4G-7Nt" customClass="AddSiteViewController" customModule="pictolog" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Fxp-Qx-jei">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add Place" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FSh-VS-P9h">
+                                <rect key="frame" x="146" y="60" width="93" height="25"/>
+                                <fontDescription key="fontDescription" name="Quicksand-Regular" family="Quicksand" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="FHQ-Na-zLs">
+                                <rect key="frame" x="30" y="120" width="354" height="579"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="67X-mg-Wu6">
+                                        <rect key="frame" x="0.0" y="0.0" width="354" height="22.5"/>
+                                        <fontDescription key="fontDescription" name="Quicksand-Regular" family="Quicksand" pointSize="18"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="U0S-YG-o42">
+                                        <rect key="frame" x="0.0" y="37.5" width="354" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="City" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l9q-2B-g8z">
+                                        <rect key="frame" x="0.0" y="86.5" width="354" height="22.5"/>
+                                        <fontDescription key="fontDescription" name="Quicksand-Regular" family="Quicksand" pointSize="18"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TiI-3A-KaO">
+                                        <rect key="frame" x="0.0" y="124" width="354" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Provience" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Mp-eR-qKG">
+                                        <rect key="frame" x="0.0" y="173" width="354" height="22.5"/>
+                                        <fontDescription key="fontDescription" name="Quicksand-Regular" family="Quicksand" pointSize="18"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SaP-GO-GLd">
+                                        <rect key="frame" x="0.0" y="210.5" width="354" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Country" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gct-lU-i3b">
+                                        <rect key="frame" x="0.0" y="259.5" width="354" height="22.5"/>
+                                        <fontDescription key="fontDescription" name="Quicksand-Regular" family="Quicksand" pointSize="18"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KGG-SN-eQg">
+                                        <rect key="frame" x="0.0" y="297" width="354" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date of Visit" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0mh-7T-Xd4">
+                                        <rect key="frame" x="0.0" y="346" width="354" height="22.5"/>
+                                        <fontDescription key="fontDescription" name="Quicksand-Regular" family="Quicksand" pointSize="18"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="glq-vb-dJO">
+                                        <rect key="frame" x="0.0" y="383.5" width="354" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Note" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6fT-FG-FJd">
+                                        <rect key="frame" x="0.0" y="432.5" width="354" height="22.5"/>
+                                        <fontDescription key="fontDescription" name="Quicksand-Regular" family="Quicksand" pointSize="18"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rs8-nq-C8l">
+                                        <rect key="frame" x="0.0" y="470" width="354" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Photo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gji-CS-z2T">
+                                        <rect key="frame" x="0.0" y="519" width="354" height="22.5"/>
+                                        <fontDescription key="fontDescription" name="Quicksand-Regular" family="Quicksand" pointSize="18"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Video" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GTy-5S-92V">
+                                        <rect key="frame" x="0.0" y="556.5" width="354" height="22.5"/>
+                                        <fontDescription key="fontDescription" name="Quicksand-Regular" family="Quicksand" pointSize="18"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jM9-8J-Xbt">
+                                <rect key="frame" x="180" y="764" width="54" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="ADD"/>
+                                <connections>
+                                    <action selector="btnAddTapped:" destination="cDg-4G-7Nt" eventType="touchUpInside" id="dmP-h5-2iA"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Jet-kO-eSV"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="FSh-VS-P9h" firstAttribute="leading" secondItem="Jet-kO-eSV" secondAttribute="leading" constant="146" id="Aoy-MQ-wpf"/>
+                            <constraint firstItem="FHQ-Na-zLs" firstAttribute="leading" secondItem="Jet-kO-eSV" secondAttribute="leading" constant="30" id="G5f-FQ-awF"/>
+                            <constraint firstItem="FSh-VS-P9h" firstAttribute="top" secondItem="Jet-kO-eSV" secondAttribute="top" constant="16" id="Njv-es-0Wi"/>
+                            <constraint firstItem="FHQ-Na-zLs" firstAttribute="top" secondItem="FSh-VS-P9h" secondAttribute="bottom" constant="35" id="Ya3-Hq-Wh3"/>
+                            <constraint firstItem="Jet-kO-eSV" firstAttribute="trailing" secondItem="FSh-VS-P9h" secondAttribute="trailing" constant="175" id="jnw-bE-g1W"/>
+                            <constraint firstItem="Jet-kO-eSV" firstAttribute="trailing" secondItem="FHQ-Na-zLs" secondAttribute="trailing" constant="30" id="nOX-WP-ZiT"/>
+                            <constraint firstItem="jM9-8J-Xbt" firstAttribute="top" secondItem="FHQ-Na-zLs" secondAttribute="bottom" constant="65" id="ruc-9F-aag"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="btnAdd" destination="jM9-8J-Xbt" id="qCY-w6-Ipn"/>
+                        <outlet property="txtFieldCity" destination="TiI-3A-KaO" id="64r-gA-9YO"/>
+                        <outlet property="txtFieldSiteName" destination="U0S-YG-o42" id="k2Q-FM-fGz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gPo-Br-IeG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2384" y="3"/>
+        </scene>
     </scenes>
     <resources>
         <image name="dp" width="55" height="55"/>
+        <image name="pictolog-logos_white" width="1200" height="1200"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemPurpleColor">
+            <color red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
