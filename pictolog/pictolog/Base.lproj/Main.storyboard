@@ -102,15 +102,6 @@
                                     </label>
                                 </subviews>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Sa-Fk-Kpi">
-                                <rect key="frame" x="180" y="788" width="54" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="ADD"/>
-                                <connections>
-                                    <action selector="btnAddSiteTapped:" destination="LSw-ia-Wpb" eventType="touchUpInside" id="mjZ-3B-iXm"/>
-                                </connections>
-                            </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Ryi-x3-ccy">
                                 <rect key="frame" x="30" y="301" width="354" height="294"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -158,6 +149,19 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Sa-Fk-Kpi" customClass="pictologButton" customModule="pictolog" customModuleProvider="target">
+                                <rect key="frame" x="195" y="640" width="60" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="plus">
+                                    <backgroundConfiguration key="background">
+                                        <color key="backgroundColor" red="0.95294117649999999" green="0.59215686270000001" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </backgroundConfiguration>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="btnAddSiteTapped:" destination="LSw-ia-Wpb" eventType="touchUpInside" id="mjZ-3B-iXm"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="RSv-wv-zPt"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -334,6 +338,7 @@
     <resources>
         <image name="dp" width="55" height="55"/>
         <image name="pictolog-logos_white" width="1200" height="1200"/>
+        <image name="plus" width="32" height="32"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
