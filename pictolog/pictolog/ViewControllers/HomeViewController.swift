@@ -19,13 +19,18 @@ class HomeViewController: UIViewController {
     var sites: [NSManagedObject] = []
     
     @IBOutlet weak var collectionViewSites: UICollectionView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         collectionViewSites.delegate = self
         collectionViewSites.dataSource = self
+        // Set initial location in Honolulu
+        let initialLocation = CLLocation(latitude: 21.282778, longitude: -157.829444)
+        mapView.centerToLocation(initialLocation)
+
         
-        imgViewProfilePic.layer.cornerRadius = 10
+       
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -38,6 +43,8 @@ class HomeViewController: UIViewController {
         } catch let error as NSError {
             print("Could not fetch. \(error), \(error.userInfo)")
           }
+        imgViewProfilePic.layer.cornerRadius = 10
+        mapView.layer.cornerRadius=10
         
     }
     
@@ -75,13 +82,25 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SiteCollectionViewCell", for: indexPath) as! SiteCollectionViewCell
-        cell.lblSiteName.text! = sites[indexPath.row].value(forKeyPath: "name") as! String
-
+        cell.createCustomCell(place: sites[indexPath.row])
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let screenSize=UIScreen.main.bounds
-        return CGSize(width: 170, height: 70)
+        return CGSize(width: 170,height: 70)
     }
+   
     
+}
+private extension MKMapView {
+  func centerToLocation(
+    _ location: CLLocation,
+    regionRadius: CLLocationDistance = 1000
+  ) {
+    let coordinateRegion = MKCoordinateRegion(
+      center: location.coordinate,
+      latitudinalMeters: regionRadius,
+      longitudinalMeters: regionRadius)
+    setRegion(coordinateRegion, animated: true)
+  }
 }

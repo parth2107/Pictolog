@@ -127,33 +127,44 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="SiteCollectionViewCell" id="VVR-fO-rnT" customClass="SiteCollectionViewCell" customModule="pictolog" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="170" height="70"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="5lu-BX-fOP">
-                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="170" height="70"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Oct-3c-fcH">
-                                                    <rect key="frame" x="5" y="5" width="118" height="118"/>
+                                                    <rect key="frame" x="5" y="5" width="160" height="60"/>
                                                     <subviews>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="21H-J0-wXa">
+                                                            <rect key="frame" x="0.0" y="0.0" width="160" height="60"/>
+                                                            <color key="backgroundColor" red="0.95294117647058818" green="0.59215686274509804" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </view>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sr7-5m-law">
-                                                            <rect key="frame" x="20" y="78" width="101.5" height="28"/>
+                                                            <rect key="frame" x="8" y="19.5" width="144" height="21"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="144" id="kws-Re-omH"/>
+                                                            </constraints>
                                                             <attributedString key="attributedText">
                                                                 <fragment content="Taj Mahal">
                                                                     <attributes>
-                                                                        <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                                                        <font key="NSFont" size="24" name="Quicksand-Medium"/>
-                                                                        <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                                        <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                        <font key="NSFont" size="18" name="Quicksand-Medium"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                                     </attributes>
                                                                 </fragment>
                                                             </attributedString>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
-                                                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="bottom" secondItem="Sr7-5m-law" secondAttribute="bottom" constant="12" id="FGG-F5-kdD"/>
-                                                        <constraint firstItem="Sr7-5m-law" firstAttribute="leading" secondItem="Oct-3c-fcH" secondAttribute="leading" constant="20" id="QkC-QP-Zc4"/>
+                                                        <constraint firstAttribute="bottom" secondItem="21H-J0-wXa" secondAttribute="bottom" id="3Zj-Ru-IBU"/>
+                                                        <constraint firstAttribute="trailing" secondItem="21H-J0-wXa" secondAttribute="trailing" id="7iK-bp-Jkm"/>
+                                                        <constraint firstItem="Sr7-5m-law" firstAttribute="centerX" secondItem="Oct-3c-fcH" secondAttribute="centerX" id="FGf-KB-MS6"/>
+                                                        <constraint firstItem="21H-J0-wXa" firstAttribute="top" secondItem="Oct-3c-fcH" secondAttribute="top" id="IbH-ZY-Wxs"/>
+                                                        <constraint firstItem="Sr7-5m-law" firstAttribute="centerY" secondItem="Oct-3c-fcH" secondAttribute="centerY" id="O97-lP-CG4"/>
+                                                        <constraint firstItem="21H-J0-wXa" firstAttribute="leading" secondItem="Oct-3c-fcH" secondAttribute="leading" id="jel-ih-djb"/>
                                                     </constraints>
                                                 </view>
                                             </subviews>
@@ -164,14 +175,16 @@
                                                 <constraint firstItem="Oct-3c-fcH" firstAttribute="leading" secondItem="5lu-BX-fOP" secondAttribute="leading" constant="5" id="y0c-UR-eZS"/>
                                             </constraints>
                                         </collectionViewCellContentView>
+                                        <size key="customSize" width="170" height="70"/>
                                         <connections>
                                             <outlet property="lblSiteName" destination="Sr7-5m-law" id="y8d-2g-zoa"/>
+                                            <outlet property="viewSiteCell" destination="21H-J0-wXa" id="dXl-GO-3iC"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Sa-Fk-Kpi" customClass="pictologButton" customModule="pictolog" customModuleProvider="target">
-                                <rect key="frame" x="329" y="806" width="55" height="55"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Sa-Fk-Kpi">
+                                <rect key="frame" x="328" y="810" width="56" height="56"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="9Sa-Fk-Kpi" secondAttribute="height" multiplier="1:1" id="eoc-q5-HNc"/>
                                 </constraints>
@@ -192,16 +205,16 @@
                             <constraint firstAttribute="trailing" secondItem="obN-Ns-fAm" secondAttribute="trailing" constant="30" id="0AC-ij-Jzr"/>
                             <constraint firstItem="7vp-PP-Isz" firstAttribute="leading" secondItem="sS1-fg-vJa" secondAttribute="leading" constant="30" id="49y-Fr-M4e"/>
                             <constraint firstItem="obN-Ns-fAm" firstAttribute="top" secondItem="A3q-4o-TzJ" secondAttribute="bottom" constant="20.5" id="5gX-2I-byi"/>
-                            <constraint firstItem="RSv-wv-zPt" firstAttribute="trailing" secondItem="9Sa-Fk-Kpi" secondAttribute="trailing" constant="30" id="Gap-EI-c7o"/>
+                            <constraint firstAttribute="trailing" secondItem="9Sa-Fk-Kpi" secondAttribute="trailing" constant="30" id="JAL-tB-ekA"/>
                             <constraint firstItem="RSv-wv-zPt" firstAttribute="trailing" secondItem="A3q-4o-TzJ" secondAttribute="trailing" constant="30" id="K5s-uA-Ma3"/>
                             <constraint firstItem="A3q-4o-TzJ" firstAttribute="leading" secondItem="RSv-wv-zPt" secondAttribute="leading" constant="30" id="K5t-he-0KD"/>
                             <constraint firstAttribute="trailing" secondItem="zzj-Yg-C9l" secondAttribute="trailing" constant="30" id="KAC-l9-CY4"/>
+                            <constraint firstAttribute="bottom" secondItem="9Sa-Fk-Kpi" secondAttribute="bottom" constant="30" id="N64-jh-PJq"/>
                             <constraint firstAttribute="bottom" secondItem="7vp-PP-Isz" secondAttribute="bottom" constant="30" id="Rtn-86-9aG"/>
                             <constraint firstItem="Ryi-x3-ccy" firstAttribute="leading" secondItem="RSv-wv-zPt" secondAttribute="leading" constant="30" id="VWG-cS-hhC"/>
                             <constraint firstItem="zzj-Yg-C9l" firstAttribute="top" secondItem="sS1-fg-vJa" secondAttribute="top" constant="60" id="WYo-7o-xGv"/>
                             <constraint firstItem="A3q-4o-TzJ" firstAttribute="top" secondItem="zzj-Yg-C9l" secondAttribute="bottom" constant="32" id="Zrv-LC-E5t"/>
                             <constraint firstItem="7vp-PP-Isz" firstAttribute="top" secondItem="obN-Ns-fAm" secondAttribute="bottom" constant="20" id="amB-at-l35"/>
-                            <constraint firstItem="RSv-wv-zPt" firstAttribute="bottom" secondItem="9Sa-Fk-Kpi" secondAttribute="bottom" constant="8" id="ebp-u3-X7o"/>
                             <constraint firstAttribute="trailing" secondItem="7vp-PP-Isz" secondAttribute="trailing" constant="30" id="lDb-Bg-lyS"/>
                             <constraint firstItem="RSv-wv-zPt" firstAttribute="trailing" secondItem="Ryi-x3-ccy" secondAttribute="trailing" constant="30" id="ngj-Zx-DwC"/>
                             <constraint firstAttribute="bottom" secondItem="Ryi-x3-ccy" secondAttribute="bottom" constant="30" id="sSW-dN-cNL"/>
