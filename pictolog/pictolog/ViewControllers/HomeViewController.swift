@@ -20,6 +20,8 @@ class HomeViewController: UIViewController {
     
     @IBOutlet weak var collectionViewSites: UICollectionView!
     
+    // MARK: - ViewController LifeCycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -29,7 +31,13 @@ class HomeViewController: UIViewController {
         let initialLocation = CLLocation(latitude: 21.282778, longitude: -157.829444)
         mapView.centerToLocation(initialLocation)
 
-        
+        // Show artwork on map
+        let artwork = Artwork(
+          title: "King David Kalakaua",
+          locationName: "Waikiki Gateway Park",
+          discipline: "Sculpture",
+          coordinate: CLLocationCoordinate2D(latitude: 21.283921, longitude: -157.831661))
+        mapView.addAnnotation(artwork)
        
     }
     
@@ -86,12 +94,14 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let screenSize=UIScreen.main.bounds
         return CGSize(width: 170,height: 70)
     }
    
     
 }
+
+// MARK: - MapView
+
 private extension MKMapView {
   func centerToLocation(
     _ location: CLLocation,

@@ -76,10 +76,10 @@
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="A3q-4o-TzJ">
-                                <rect key="frame" x="30" y="147" width="354" height="96.5"/>
+                                <rect key="frame" x="30" y="147" width="354" height="102.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p8g-F6-E0Q">
-                                        <rect key="frame" x="0.0" y="0.0" width="354" height="21"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="354" height="22.5"/>
                                         <attributedString key="attributedText">
                                             <fragment content="Good Morning, Harman!">
                                                 <attributes>
@@ -90,7 +90,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BD0-7i-oQZ">
-                                        <rect key="frame" x="0.0" y="31" width="354" height="65.5"/>
+                                        <rect key="frame" x="0.0" y="32.5" width="354" height="70"/>
                                         <attributedString key="attributedText">
                                             <fragment content="Got something to worth capturing today?">
                                                 <attributes>
@@ -103,21 +103,21 @@
                                 </subviews>
                             </stackView>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="7vp-PP-Isz">
-                                <rect key="frame" x="30" y="315" width="354" height="551"/>
+                                <rect key="frame" x="30" y="321" width="354" height="545"/>
                             </mapView>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="obN-Ns-fAm">
-                                <rect key="frame" x="304" y="264" width="80" height="32"/>
+                                <rect key="frame" x="304" y="270" width="80" height="32"/>
                                 <segments>
                                     <segment title="" image="map" catalog="system"/>
-                                    <segment title="" image="list.dash" catalog="system"/>
+                                    <segment title="" image="square.grid.2x2" catalog="system"/>
                                 </segments>
-                                <color key="selectedSegmentTintColor" systemColor="systemOrangeColor"/>
+                                <color key="selectedSegmentTintColor" red="0.90196073060000004" green="0.60784316059999999" blue="0.4352940917" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <connections>
                                     <action selector="segmantBtnTapped:" destination="LSw-ia-Wpb" eventType="valueChanged" id="9vb-Jr-tXH"/>
                                 </connections>
                             </segmentedControl>
                             <collectionView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Ryi-x3-ccy">
-                                <rect key="frame" x="30" y="315" width="354" height="551"/>
+                                <rect key="frame" x="30" y="321" width="354" height="545"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ei2-P0-x3a">
                                     <size key="itemSize" width="128" height="128"/>
@@ -141,7 +141,7 @@
                                                             <color key="backgroundColor" red="0.95294117647058818" green="0.59215686274509804" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                                                         </view>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sr7-5m-law">
-                                                            <rect key="frame" x="8" y="19.5" width="144" height="21"/>
+                                                            <rect key="frame" x="8" y="19" width="144" height="22.5"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="144" id="kws-Re-omH"/>
                                                             </constraints>
@@ -260,88 +260,88 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add Place" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FSh-VS-P9h">
-                                <rect key="frame" x="146" y="60" width="93" height="23.5"/>
+                                <rect key="frame" x="146" y="60" width="93" height="25"/>
                                 <fontDescription key="fontDescription" name="Quicksand-Regular" family="Quicksand" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="FHQ-Na-zLs">
-                                <rect key="frame" x="30" y="118.5" width="354" height="567"/>
+                                <rect key="frame" x="30" y="120" width="354" height="579"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="67X-mg-Wu6">
-                                        <rect key="frame" x="0.0" y="0.0" width="354" height="21"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="354" height="22.5"/>
                                         <fontDescription key="fontDescription" name="Quicksand-Regular" family="Quicksand" pointSize="18"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="U0S-YG-o42">
-                                        <rect key="frame" x="0.0" y="36" width="354" height="34"/>
+                                        <rect key="frame" x="0.0" y="37.5" width="354" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="City" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l9q-2B-g8z">
-                                        <rect key="frame" x="0.0" y="85" width="354" height="21"/>
+                                        <rect key="frame" x="0.0" y="86.5" width="354" height="22.5"/>
                                         <fontDescription key="fontDescription" name="Quicksand-Regular" family="Quicksand" pointSize="18"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TiI-3A-KaO">
-                                        <rect key="frame" x="0.0" y="121" width="354" height="34"/>
+                                        <rect key="frame" x="0.0" y="124" width="354" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Provience" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Mp-eR-qKG">
-                                        <rect key="frame" x="0.0" y="170" width="354" height="21"/>
+                                        <rect key="frame" x="0.0" y="173" width="354" height="22.5"/>
                                         <fontDescription key="fontDescription" name="Quicksand-Regular" family="Quicksand" pointSize="18"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SaP-GO-GLd">
-                                        <rect key="frame" x="0.0" y="206" width="354" height="34"/>
+                                        <rect key="frame" x="0.0" y="210.5" width="354" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Country" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gct-lU-i3b">
-                                        <rect key="frame" x="0.0" y="255" width="354" height="21"/>
+                                        <rect key="frame" x="0.0" y="259.5" width="354" height="22.5"/>
                                         <fontDescription key="fontDescription" name="Quicksand-Regular" family="Quicksand" pointSize="18"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KGG-SN-eQg">
-                                        <rect key="frame" x="0.0" y="291" width="354" height="34"/>
+                                        <rect key="frame" x="0.0" y="297" width="354" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date of Visit" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0mh-7T-Xd4">
-                                        <rect key="frame" x="0.0" y="340" width="354" height="21"/>
+                                        <rect key="frame" x="0.0" y="346" width="354" height="22.5"/>
                                         <fontDescription key="fontDescription" name="Quicksand-Regular" family="Quicksand" pointSize="18"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="glq-vb-dJO">
-                                        <rect key="frame" x="0.0" y="376" width="354" height="34"/>
+                                        <rect key="frame" x="0.0" y="383.5" width="354" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Note" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6fT-FG-FJd">
-                                        <rect key="frame" x="0.0" y="425" width="354" height="21"/>
+                                        <rect key="frame" x="0.0" y="432.5" width="354" height="22.5"/>
                                         <fontDescription key="fontDescription" name="Quicksand-Regular" family="Quicksand" pointSize="18"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rs8-nq-C8l">
-                                        <rect key="frame" x="0.0" y="461" width="354" height="34"/>
+                                        <rect key="frame" x="0.0" y="470" width="354" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Photo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gji-CS-z2T">
-                                        <rect key="frame" x="0.0" y="510" width="354" height="21"/>
+                                        <rect key="frame" x="0.0" y="519" width="354" height="22.5"/>
                                         <fontDescription key="fontDescription" name="Quicksand-Regular" family="Quicksand" pointSize="18"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Video" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GTy-5S-92V">
-                                        <rect key="frame" x="0.0" y="546" width="354" height="21"/>
+                                        <rect key="frame" x="0.0" y="556.5" width="354" height="22.5"/>
                                         <fontDescription key="fontDescription" name="Quicksand-Regular" family="Quicksand" pointSize="18"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -349,7 +349,7 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jM9-8J-Xbt">
-                                <rect key="frame" x="180" y="750.5" width="54" height="31"/>
+                                <rect key="frame" x="180" y="764" width="54" height="31"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="ADD"/>
                                 <connections>
@@ -384,15 +384,12 @@
     </scenes>
     <resources>
         <image name="dp" width="55" height="55"/>
-        <image name="list.dash" catalog="system" width="128" height="85"/>
         <image name="map" catalog="system" width="128" height="110"/>
         <image name="pictolog-logos_white" width="1200" height="1200"/>
         <image name="plus" width="32" height="32"/>
+        <image name="square.grid.2x2" catalog="system" width="128" height="114"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemOrangeColor">
-            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
