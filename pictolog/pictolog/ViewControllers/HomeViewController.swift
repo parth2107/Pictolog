@@ -43,7 +43,7 @@ class HomeViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         
-        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Site")
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Place")
         
         do{
             sites =  try _managedContext.fetch(fetchRequest)
@@ -52,7 +52,8 @@ class HomeViewController: UIViewController {
             print("Could not fetch. \(error), \(error.userInfo)")
           }
         imgViewProfilePic.layer.cornerRadius = 10
-        mapView.layer.cornerRadius=10
+        mapView.layer.cornerRadius = 10
+        btnAddSite.layer.cornerRadius = 10
         
     }
     
@@ -94,7 +95,7 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 170,height: 70)
+        return CGSize(width: 170,height: 100)
     }
    
     

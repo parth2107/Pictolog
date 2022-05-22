@@ -10,4 +10,4 @@ import UIKit
 
 let _appDelegator = { return UIApplication.shared.delegate! as! AppDelegate }()
 
-let _managedContext = { return _appDelegator.persistentContainer.viewContext}()
+let _managedContext = { return DataManager.shared.persistentContainer.viewContext}()

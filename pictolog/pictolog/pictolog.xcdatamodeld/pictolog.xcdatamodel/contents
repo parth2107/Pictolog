@@ -1,10 +1,53 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="20086" systemVersion="21E258" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="Site" representedClassName="Site" syncable="YES" codeGenerationType="class">
-        <attribute name="city" optional="YES" attributeType="String"/>
+    <entity name="City" representedClassName="City" syncable="YES" codeGenerationType="class">
+        <attribute name="created_at" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="updated_at" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <relationship name="country" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Country" inverseName="city" inverseEntity="Country"/>
+        <relationship name="place" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Place" inverseName="city" inverseEntity="Place"/>
+        <relationship name="province" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Province" inverseName="city" inverseEntity="Province"/>
+    </entity>
+    <entity name="Country" representedClassName="Country" syncable="YES" codeGenerationType="class">
+        <attribute name="created_at" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="updated_at" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <relationship name="city" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="City" inverseName="country" inverseEntity="City"/>
+        <relationship name="place" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Place" inverseName="country" inverseEntity="Place"/>
+        <relationship name="province" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Province" inverseName="country" inverseEntity="Province"/>
+    </entity>
+    <entity name="Image" representedClassName="Image" syncable="YES" codeGenerationType="class">
+        <attribute name="created_At" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="gallary_id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="photo" optional="YES" attributeType="Binary"/>
+        <attribute name="updated_at" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+    </entity>
+    <entity name="Place" representedClassName="Place" syncable="YES" codeGenerationType="class">
+        <attribute name="created_at" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="gallary_id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="latitude" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="longitude" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="note" optional="YES" attributeType="String"/>
+        <attribute name="updated_at" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="visited_on" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <relationship name="city" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="City" inverseName="place" inverseEntity="City"/>
+        <relationship name="country" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Country" inverseName="place" inverseEntity="Country"/>
+        <relationship name="province" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Province" inverseName="place" inverseEntity="Province"/>
+    </entity>
+    <entity name="Province" representedClassName="Province" syncable="YES" codeGenerationType="class">
+        <attribute name="created_at" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="updated_at" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <relationship name="city" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="City" inverseName="province" inverseEntity="City"/>
+        <relationship name="country" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Country" inverseName="province" inverseEntity="Country"/>
+        <relationship name="place" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Place" inverseName="province" inverseEntity="Place"/>
     </entity>
     <elements>
-        <element name="Site" positionX="-63" positionY="-36" width="128" height="59"/>
+        <element name="Place" positionX="-63" positionY="-36" width="128" height="194"/>
+        <element name="City" positionX="-63" positionY="54" width="128" height="119"/>
+        <element name="Province" positionX="-54" positionY="63" width="128" height="119"/>
+        <element name="Country" positionX="-36" positionY="72" width="128" height="119"/>
+        <element name="Image" positionX="-18" positionY="81" width="128" height="89"/>
     </elements>
 </model>

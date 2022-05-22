@@ -27,6 +27,7 @@
 		594A5B47282FF60700ECC497 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 594A5B46282FF60700ECC497 /* Constant.swift */; };
 		594A5B49282FFBF100ECC497 /* SiteCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 594A5B48282FFBF100ECC497 /* SiteCollectionViewCell.swift */; };
 		595AFEB02836A91B00A26655 /* Artwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 595AFEAF2836A91B00A26655 /* Artwork.swift */; };
+		595AFEB228388F1500A26655 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 595AFEB128388F1500A26655 /* DataManager.swift */; };
 		59D9BA00283137EA000F74B7 /* utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D9B9FF283137EA000F74B7 /* utility.swift */; };
 /* End PBXBuildFile section */
 
@@ -72,6 +73,7 @@
 		594A5B46282FF60700ECC497 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		594A5B48282FFBF100ECC497 /* SiteCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SiteCollectionViewCell.swift; sourceTree = "<group>"; };
 		595AFEAF2836A91B00A26655 /* Artwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Artwork.swift; sourceTree = "<group>"; };
+		595AFEB128388F1500A26655 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		59D9B9FF283137EA000F74B7 /* utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = utility.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -135,6 +137,7 @@
 				594A5B46282FF60700ECC497 /* Constant.swift */,
 				59D9B9FF283137EA000F74B7 /* utility.swift */,
 				595AFEAF2836A91B00A26655 /* Artwork.swift */,
+				595AFEB128388F1500A26655 /* DataManager.swift */,
 			);
 			path = pictolog;
 			sourceTree = "<group>";
@@ -323,6 +326,7 @@
 				594A5B04282EA6CD00ECC497 /* AppDelegate.swift in Sources */,
 				594A5B45282FF4AC00ECC497 /* AddSiteViewController.swift in Sources */,
 				59D9BA00283137EA000F74B7 /* utility.swift in Sources */,
+				595AFEB228388F1500A26655 /* DataManager.swift in Sources */,
 				594A5B0E282EA6CD00ECC497 /* pictolog.xcdatamodeld in Sources */,
 				594A5B06282EA6CD00ECC497 /* SceneDelegate.swift in Sources */,
 			);
