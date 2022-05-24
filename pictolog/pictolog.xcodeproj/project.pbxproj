@@ -28,6 +28,7 @@
 		594A5B49282FFBF100ECC497 /* SiteCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 594A5B48282FFBF100ECC497 /* SiteCollectionViewCell.swift */; };
 		595AFEB02836A91B00A26655 /* Artwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 595AFEAF2836A91B00A26655 /* Artwork.swift */; };
 		595AFEB228388F1500A26655 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 595AFEB128388F1500A26655 /* DataManager.swift */; };
+		595AFED4283B096C00A26655 /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 595AFED3283B096C00A26655 /* ImageCollectionViewCell.swift */; };
 		59D9BA00283137EA000F74B7 /* utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D9B9FF283137EA000F74B7 /* utility.swift */; };
 /* End PBXBuildFile section */
 
@@ -74,6 +75,7 @@
 		594A5B48282FFBF100ECC497 /* SiteCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SiteCollectionViewCell.swift; sourceTree = "<group>"; };
 		595AFEAF2836A91B00A26655 /* Artwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Artwork.swift; sourceTree = "<group>"; };
 		595AFEB128388F1500A26655 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		595AFED3283B096C00A26655 /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		59D9B9FF283137EA000F74B7 /* utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = utility.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -125,6 +127,7 @@
 		594A5B02282EA6CD00ECC497 /* pictolog */ = {
 			isa = PBXGroup;
 			children = (
+				595AFED5283D6EF200A26655 /* Other classes */,
 				594A5B39282EB34200ECC497 /* Fonts */,
 				594A5B36282EA6E800ECC497 /* ViewControllers */,
 				594A5B03282EA6CD00ECC497 /* AppDelegate.swift */,
@@ -134,10 +137,6 @@
 				594A5B11282EA6CE00ECC497 /* LaunchScreen.storyboard */,
 				594A5B14282EA6CE00ECC497 /* Info.plist */,
 				594A5B0C282EA6CD00ECC497 /* pictolog.xcdatamodeld */,
-				594A5B46282FF60700ECC497 /* Constant.swift */,
-				59D9B9FF283137EA000F74B7 /* utility.swift */,
-				595AFEAF2836A91B00A26655 /* Artwork.swift */,
-				595AFEB128388F1500A26655 /* DataManager.swift */,
 			);
 			path = pictolog;
 			sourceTree = "<group>";
@@ -166,6 +165,7 @@
 				594A5B37282EACF900ECC497 /* HomeViewController.swift */,
 				594A5B44282FF4AC00ECC497 /* AddSiteViewController.swift */,
 				594A5B48282FFBF100ECC497 /* SiteCollectionViewCell.swift */,
+				595AFED3283B096C00A26655 /* ImageCollectionViewCell.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -180,6 +180,17 @@
 				594A5B3A282EB37500ECC497 /* Quicksand-SemiBold.ttf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		595AFED5283D6EF200A26655 /* Other classes */ = {
+			isa = PBXGroup;
+			children = (
+				595AFEB128388F1500A26655 /* DataManager.swift */,
+				595AFEAF2836A91B00A26655 /* Artwork.swift */,
+				59D9B9FF283137EA000F74B7 /* utility.swift */,
+				594A5B46282FF60700ECC497 /* Constant.swift */,
+			);
+			path = "Other classes";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -324,6 +335,7 @@
 				594A5B08282EA6CD00ECC497 /* InitialViewController.swift in Sources */,
 				594A5B49282FFBF100ECC497 /* SiteCollectionViewCell.swift in Sources */,
 				594A5B04282EA6CD00ECC497 /* AppDelegate.swift in Sources */,
+				595AFED4283B096C00A26655 /* ImageCollectionViewCell.swift in Sources */,
 				594A5B45282FF4AC00ECC497 /* AddSiteViewController.swift in Sources */,
 				59D9BA00283137EA000F74B7 /* utility.swift in Sources */,
 				595AFEB228388F1500A26655 /* DataManager.swift in Sources */,

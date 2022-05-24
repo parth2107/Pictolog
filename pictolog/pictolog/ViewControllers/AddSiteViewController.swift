@@ -20,11 +20,20 @@ class AddSiteViewController: UIViewController {
     @IBOutlet weak var txtFieldLongitude: UITextField!
     @IBOutlet weak var btnAdd: UIButton!
     
+    @IBOutlet weak var collectionViewImages: UICollectionView!
+    
+    @IBOutlet weak var btnCamera: UIButton!
+    
+    var images:[UIImage] = []
+    let imagePicker = UIImagePickerController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
+        
+        collectionViewImages.dataSource = self
+        collectionViewImages.delegate = self
+        imagePicker.delegate = self
     }
       
     
@@ -93,5 +102,48 @@ class AddSiteViewController: UIViewController {
           }
     }
     
+    @IBAction func btnCameraTapped(_ sender: UIButton) {
+        print("pressed btn")
+        imagePicker.allowsEditing = false
+        imagePicker.sourceType = .photoLibrary
+        present(imagePicker, animated: true, completion: nil)
+    }
+    
+}
 
+extension AddSiteViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    // MARK: - CollectionView Delegate Methods For Gallary
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return images.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ImageCollectionViewCell", for: indexPath) as! ImageCollectionViewCell
+        cell.imgViewCapturedImg.image = images[indexPath.row]
+        cell.imgViewCapturedImg.contentMode = .scaleAspectFit
+        cell.imgViewCapturedImg.clipsToBounds = true
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: 100,height: 100)
+    }
+    
+    // MARK: - UIImagePickerControllerDelegate Methods
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let pickedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+            // add image into the image array and relaod the collection view
+            images.append(pickedImage)
+            collectionViewImages.reloadData()
+        }
+        
+        dismiss(animated: true, completion: nil)
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        dismiss(animated: true, completion: nil)
+    }
 }

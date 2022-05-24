@@ -16,7 +16,7 @@ class HomeViewController: UIViewController {
     
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var btnAddSite: UIButton!
-    var sites: [NSManagedObject] = []
+    var places: [NSManagedObject] = []
     
     @IBOutlet weak var collectionViewSites: UICollectionView!
     
@@ -27,17 +27,6 @@ class HomeViewController: UIViewController {
         
         collectionViewSites.delegate = self
         collectionViewSites.dataSource = self
-        // Set initial location in Honolulu
-        let initialLocation = CLLocation(latitude: 21.282778, longitude: -157.829444)
-        mapView.centerToLocation(initialLocation)
-
-        // Show artwork on map
-        let artwork = Artwork(
-          title: "King David Kalakaua",
-          locationName: "Waikiki Gateway Park",
-          discipline: "Sculpture",
-          coordinate: CLLocationCoordinate2D(latitude: 21.283921, longitude: -157.831661))
-        mapView.addAnnotation(artwork)
        
     }
     
@@ -46,11 +35,13 @@ class HomeViewController: UIViewController {
         let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Place")
         
         do{
-            sites =  try _managedContext.fetch(fetchRequest)
-            print(sites)
+            places =  try _managedContext.fetch(fetchRequest)
         } catch let error as NSError {
             print("Could not fetch. \(error), \(error.userInfo)")
           }
+        
+        addPlacesAsAnnotationsInMapView(places)
+        
         imgViewProfilePic.layer.cornerRadius = 10
         mapView.layer.cornerRadius = 10
         btnAddSite.layer.cornerRadius = 10
@@ -79,6 +70,27 @@ class HomeViewController: UIViewController {
         }
     }
     
+    // MARK: - Other Funcation
+    
+    func addPlacesAsAnnotationsInMapView(_ places: [NSManagedObject]) {
+        
+        for place in places {
+            
+            let placeName = (place.value(forKeyPath: "name") as! String)
+            let placeLatitude = (place.value(forKeyPath: "latitude") as! Double)
+            let placeLongitude = (place.value(forKeyPath: "longitude") as! Double)
+            
+            // Show artwork on map
+            let artwork = Artwork(
+              title: placeName,
+              locationName: placeName,
+              discipline: "Place",
+              coordinate: CLLocationCoordinate2D(latitude: placeLatitude, longitude: placeLongitude))
+            
+            mapView.addAnnotation(artwork)
+            print("placeLatitude: \(placeLatitude) and placeLongitude: \(placeLongitude)")
+        }
+    }
 }
 
 // MARK: - CollectionView
@@ -86,12 +98,12 @@ class HomeViewController: UIViewController {
 extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource , UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return sites.count
+        return places.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SiteCollectionViewCell", for: indexPath) as! SiteCollectionViewCell
-        cell.createCustomCell(place: sites[indexPath.row])
+        cell.createCustomCell(place: places[indexPath.row])
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -99,19 +111,4 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     }
    
     
-}
-
-// MARK: - MapView
-
-private extension MKMapView {
-  func centerToLocation(
-    _ location: CLLocation,
-    regionRadius: CLLocationDistance = 1000
-  ) {
-    let coordinateRegion = MKCoordinateRegion(
-      center: location.coordinate,
-      latitudinalMeters: regionRadius,
-      longitudinalMeters: regionRadius)
-    setRegion(coordinateRegion, animated: true)
-  }
 }
