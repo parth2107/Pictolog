@@ -36,6 +36,9 @@ class AddSiteViewController: UIViewController {
         imagePicker.delegate = self
     }
       
+    @IBAction func btnBackTapped(_ sender: UIButton) {
+        self.navigationController?.popViewController(animated: true)
+    }
     
     @IBAction func btnAddTapped(_ sender: UIButton) {
         

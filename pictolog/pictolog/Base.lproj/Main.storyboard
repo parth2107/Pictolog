@@ -12,6 +12,9 @@
         <array key="Quicksand-Bold.ttf">
             <string>Quicksand-Bold</string>
         </array>
+        <array key="Quicksand-Medium.ttf">
+            <string>Quicksand-Medium</string>
+        </array>
         <array key="Quicksand-Regular.ttf">
             <string>Quicksand-Regular</string>
         </array>
@@ -257,10 +260,9 @@
         <!--Navigation Controller-->
         <scene sceneID="eeH-vV-xnR">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="McS-9u-3yl" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="McS-9u-3yl" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="MyU-Zc-nIR">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -286,114 +288,29 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9ss-QO-y9r">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="1150"/>
                                         <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jWe-dz-gf1">
+                                                <rect key="frame" x="19" y="18" width="56" height="46"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" image="left-arrow"/>
+                                                <connections>
+                                                    <action selector="btnBackTapped:" destination="cDg-4G-7Nt" eventType="touchUpInside" id="FyT-bp-bol"/>
+                                                </connections>
+                                            </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add Place" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FSh-VS-P9h">
-                                                <rect key="frame" x="160" y="50" width="93" height="25"/>
-                                                <fontDescription key="fontDescription" name="Quicksand-Regular" family="Quicksand" pointSize="20"/>
+                                                <rect key="frame" x="30" y="84" width="131.5" height="35"/>
+                                                <fontDescription key="fontDescription" name="Quicksand-Medium" family="Quicksand" pointSize="28"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="FHQ-Na-zLs">
-                                                <rect key="frame" x="30" y="105" width="354" height="677"/>
-                                                <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="67X-mg-Wu6">
-                                                        <rect key="frame" x="0.0" y="0.0" width="354" height="22.5"/>
-                                                        <fontDescription key="fontDescription" name="Quicksand-Regular" family="Quicksand" pointSize="18"/>
-                                                        <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="U0S-YG-o42">
-                                                        <rect key="frame" x="0.0" y="37.5" width="354" height="34"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <textInputTraits key="textInputTraits"/>
-                                                    </textField>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="City" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l9q-2B-g8z">
-                                                        <rect key="frame" x="0.0" y="86.5" width="354" height="22.5"/>
-                                                        <fontDescription key="fontDescription" name="Quicksand-Regular" family="Quicksand" pointSize="18"/>
-                                                        <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TiI-3A-KaO">
-                                                        <rect key="frame" x="0.0" y="124" width="354" height="34"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <textInputTraits key="textInputTraits"/>
-                                                    </textField>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Province" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Mp-eR-qKG">
-                                                        <rect key="frame" x="0.0" y="173" width="354" height="22.5"/>
-                                                        <fontDescription key="fontDescription" name="Quicksand-Regular" family="Quicksand" pointSize="18"/>
-                                                        <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SaP-GO-GLd">
-                                                        <rect key="frame" x="0.0" y="210.5" width="354" height="34"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <textInputTraits key="textInputTraits"/>
-                                                    </textField>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Country" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gct-lU-i3b">
-                                                        <rect key="frame" x="0.0" y="259.5" width="354" height="22.5"/>
-                                                        <fontDescription key="fontDescription" name="Quicksand-Regular" family="Quicksand" pointSize="18"/>
-                                                        <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KGG-SN-eQg">
-                                                        <rect key="frame" x="0.0" y="297" width="354" height="34"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <textInputTraits key="textInputTraits"/>
-                                                    </textField>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date of Visit" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0mh-7T-Xd4">
-                                                        <rect key="frame" x="0.0" y="346" width="354" height="22.5"/>
-                                                        <fontDescription key="fontDescription" name="Quicksand-Regular" family="Quicksand" pointSize="18"/>
-                                                        <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="glq-vb-dJO">
-                                                        <rect key="frame" x="0.0" y="383.5" width="354" height="34"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <textInputTraits key="textInputTraits"/>
-                                                    </textField>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Note" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6fT-FG-FJd">
-                                                        <rect key="frame" x="0.0" y="432.5" width="354" height="22.5"/>
-                                                        <fontDescription key="fontDescription" name="Quicksand-Regular" family="Quicksand" pointSize="18"/>
-                                                        <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rs8-nq-C8l">
-                                                        <rect key="frame" x="0.0" y="470" width="354" height="34"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <textInputTraits key="textInputTraits"/>
-                                                    </textField>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Latitude" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gji-CS-z2T">
-                                                        <rect key="frame" x="0.0" y="519" width="354" height="22.5"/>
-                                                        <fontDescription key="fontDescription" name="Quicksand-Regular" family="Quicksand" pointSize="18"/>
-                                                        <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jYk-s5-M6L">
-                                                        <rect key="frame" x="0.0" y="556.5" width="354" height="34"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <textInputTraits key="textInputTraits"/>
-                                                    </textField>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Longitude" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GTy-5S-92V">
-                                                        <rect key="frame" x="0.0" y="605.5" width="354" height="22.5"/>
-                                                        <fontDescription key="fontDescription" name="Quicksand-Regular" family="Quicksand" pointSize="18"/>
-                                                        <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lFh-LX-IPh">
-                                                        <rect key="frame" x="0.0" y="643" width="354" height="34"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <textInputTraits key="textInputTraits"/>
-                                                    </textField>
-                                                </subviews>
-                                            </stackView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gallary" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="TXi-pJ-qWW">
-                                                <rect key="frame" x="29" y="814" width="272" height="35"/>
+                                                <rect key="frame" x="30" y="848" width="272" height="35"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" name="Quicksand-Regular" family="Quicksand" pointSize="18"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="1v4-hf-TXS">
-                                                <rect key="frame" x="30" y="889.5" width="354" height="130"/>
+                                                <rect key="frame" x="30" y="918" width="354" height="98"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="HiS-Ej-NQV">
                                                     <size key="itemSize" width="128" height="128"/>
@@ -438,30 +355,124 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vs0-y9-eJL">
-                                                <rect key="frame" x="321" y="810" width="56" height="46"/>
+                                                <rect key="frame" x="322" y="852" width="55" height="46"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" image="plus-2"/>
                                                 <connections>
                                                     <action selector="btnCameraTapped:" destination="cDg-4G-7Nt" eventType="touchUpInside" id="tNY-To-peU"/>
                                                 </connections>
                                             </button>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="FHQ-Na-zLs">
+                                                <rect key="frame" x="30" y="167" width="354" height="657"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="67X-mg-Wu6">
+                                                        <rect key="frame" x="0.0" y="0.0" width="354" height="20"/>
+                                                        <fontDescription key="fontDescription" name="Quicksand-Regular" family="Quicksand" pointSize="16"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="U0S-YG-o42">
+                                                        <rect key="frame" x="0.0" y="35" width="354" height="34"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="City" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l9q-2B-g8z">
+                                                        <rect key="frame" x="0.0" y="84" width="354" height="20"/>
+                                                        <fontDescription key="fontDescription" name="Quicksand-Regular" family="Quicksand" pointSize="16"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TiI-3A-KaO">
+                                                        <rect key="frame" x="0.0" y="119" width="354" height="34"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Province" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Mp-eR-qKG">
+                                                        <rect key="frame" x="0.0" y="168" width="354" height="20"/>
+                                                        <fontDescription key="fontDescription" name="Quicksand-Regular" family="Quicksand" pointSize="16"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SaP-GO-GLd">
+                                                        <rect key="frame" x="0.0" y="203" width="354" height="34"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Country" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gct-lU-i3b">
+                                                        <rect key="frame" x="0.0" y="252" width="354" height="20"/>
+                                                        <fontDescription key="fontDescription" name="Quicksand-Regular" family="Quicksand" pointSize="16"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KGG-SN-eQg">
+                                                        <rect key="frame" x="0.0" y="287" width="354" height="34"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date of Visit" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0mh-7T-Xd4">
+                                                        <rect key="frame" x="0.0" y="336" width="354" height="20"/>
+                                                        <fontDescription key="fontDescription" name="Quicksand-Regular" family="Quicksand" pointSize="16"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="glq-vb-dJO">
+                                                        <rect key="frame" x="0.0" y="371" width="354" height="34"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Note" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6fT-FG-FJd">
+                                                        <rect key="frame" x="0.0" y="420" width="354" height="20"/>
+                                                        <fontDescription key="fontDescription" name="Quicksand-Regular" family="Quicksand" pointSize="16"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rs8-nq-C8l">
+                                                        <rect key="frame" x="0.0" y="455" width="354" height="34"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Latitude" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gji-CS-z2T">
+                                                        <rect key="frame" x="0.0" y="504" width="354" height="20"/>
+                                                        <fontDescription key="fontDescription" name="Quicksand-Regular" family="Quicksand" pointSize="16"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jYk-s5-M6L">
+                                                        <rect key="frame" x="0.0" y="539" width="354" height="34"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Longitude" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GTy-5S-92V">
+                                                        <rect key="frame" x="0.0" y="588" width="354" height="20"/>
+                                                        <fontDescription key="fontDescription" name="Quicksand-Regular" family="Quicksand" pointSize="16"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lFh-LX-IPh">
+                                                        <rect key="frame" x="0.0" y="623" width="354" height="34"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                </subviews>
+                                            </stackView>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstItem="vs0-y9-eJL" firstAttribute="leading" secondItem="TXi-pJ-qWW" secondAttribute="trailing" constant="20" id="2gu-BF-aCV"/>
+                                            <constraint firstItem="FHQ-Na-zLs" firstAttribute="top" secondItem="FSh-VS-P9h" secondAttribute="bottom" constant="48" id="79V-27-2qn"/>
+                                            <constraint firstItem="FSh-VS-P9h" firstAttribute="leading" secondItem="9ss-QO-y9r" secondAttribute="leading" constant="30" id="DfL-O2-39V"/>
                                             <constraint firstItem="FHQ-Na-zLs" firstAttribute="leading" secondItem="9ss-QO-y9r" secondAttribute="leading" constant="30" id="G7p-JB-37t"/>
                                             <constraint firstAttribute="height" constant="1150" id="HsP-PB-HBO"/>
+                                            <constraint firstItem="jWe-dz-gf1" firstAttribute="leading" secondItem="9ss-QO-y9r" secondAttribute="leading" constant="19" id="JZa-03-MDs"/>
+                                            <constraint firstItem="TXi-pJ-qWW" firstAttribute="top" secondItem="FHQ-Na-zLs" secondAttribute="bottom" constant="24" id="Kpr-TJ-K3L"/>
                                             <constraint firstAttribute="trailing" secondItem="1v4-hf-TXS" secondAttribute="trailing" constant="30" id="LG9-WF-jF6"/>
-                                            <constraint firstAttribute="trailing" secondItem="FSh-VS-P9h" secondAttribute="trailing" constant="161" id="aAD-pf-IYe"/>
-                                            <constraint firstItem="TXi-pJ-qWW" firstAttribute="top" secondItem="FHQ-Na-zLs" secondAttribute="bottom" constant="32" id="ajm-8m-f9m"/>
-                                            <constraint firstItem="FSh-VS-P9h" firstAttribute="leading" secondItem="9ss-QO-y9r" secondAttribute="leading" constant="160" id="bSF-nb-rak"/>
-                                            <constraint firstAttribute="bottom" secondItem="jM9-8J-Xbt" secondAttribute="bottom" constant="42" id="cYA-BL-gtT"/>
+                                            <constraint firstItem="FSh-VS-P9h" firstAttribute="top" secondItem="jWe-dz-gf1" secondAttribute="bottom" constant="20" id="Xax-aj-CM6"/>
+                                            <constraint firstAttribute="bottom" secondItem="jM9-8J-Xbt" secondAttribute="bottom" constant="42" id="Zy5-qU-FpY"/>
                                             <constraint firstItem="1v4-hf-TXS" firstAttribute="leading" secondItem="9ss-QO-y9r" secondAttribute="leading" constant="30" id="dRH-lK-FQ1"/>
                                             <constraint firstItem="vs0-y9-eJL" firstAttribute="top" secondItem="FHQ-Na-zLs" secondAttribute="bottom" constant="28" id="hem-WK-EBU"/>
-                                            <constraint firstItem="FHQ-Na-zLs" firstAttribute="top" secondItem="FSh-VS-P9h" secondAttribute="bottom" constant="30" id="jTH-B0-Zgp"/>
-                                            <constraint firstItem="jM9-8J-Xbt" firstAttribute="top" secondItem="1v4-hf-TXS" secondAttribute="bottom" constant="57.5" id="mHw-A7-f2y"/>
-                                            <constraint firstItem="FSh-VS-P9h" firstAttribute="top" secondItem="9ss-QO-y9r" secondAttribute="top" constant="50" id="nGF-5K-PXZ"/>
-                                            <constraint firstItem="1v4-hf-TXS" firstAttribute="top" secondItem="vs0-y9-eJL" secondAttribute="bottom" constant="33.5" id="vRr-Ca-odg"/>
+                                            <constraint firstItem="jM9-8J-Xbt" firstAttribute="top" secondItem="1v4-hf-TXS" secondAttribute="bottom" constant="61" id="mHw-A7-f2y"/>
+                                            <constraint firstItem="jWe-dz-gf1" firstAttribute="top" secondItem="9ss-QO-y9r" secondAttribute="top" constant="18" id="qdQ-iC-aWe"/>
+                                            <constraint firstItem="1v4-hf-TXS" firstAttribute="top" secondItem="vs0-y9-eJL" secondAttribute="bottom" constant="20" id="vRr-Ca-odg"/>
                                             <constraint firstAttribute="trailing" secondItem="FHQ-Na-zLs" secondAttribute="trailing" constant="30" id="wNf-eK-drp"/>
                                             <constraint firstItem="jM9-8J-Xbt" firstAttribute="leading" secondItem="9ss-QO-y9r" secondAttribute="leading" constant="180" id="xDa-B6-93Q"/>
                                             <constraint firstAttribute="trailing" secondItem="vs0-y9-eJL" secondAttribute="trailing" constant="37" id="yGh-dW-7Qk"/>
@@ -511,6 +522,7 @@
     </scenes>
     <resources>
         <image name="dp" width="55" height="55"/>
+        <image name="left-arrow" width="32" height="32"/>
         <image name="map" catalog="system" width="128" height="110"/>
         <image name="pictolog-logos_white" width="1200" height="1200"/>
         <image name="plus" width="32" height="32"/>

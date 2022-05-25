@@ -16,7 +16,7 @@ class pictologButton: UIButton {
     }
     
     func setup() {
-        self.layer.cornerRadius = 15
+        self.layer.cornerRadius = 10
 //        self.backgroundColor = UIColor(red: 243, green: 151, blue: 102, alpha: 1)
         self.layer.borderWidth = 4
         self.layer.borderColor = UIColor.white.cgColor
