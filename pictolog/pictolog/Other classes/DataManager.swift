@@ -103,7 +103,7 @@ class DataManager {
         do {
             places = try persistentContainer.viewContext.fetch(request)
         } catch {
-            print("Error fetching budgets")
+            print("Error fetching places")
         }
         
         return places

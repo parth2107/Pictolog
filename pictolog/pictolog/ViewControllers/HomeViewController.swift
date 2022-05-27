@@ -91,6 +91,12 @@ class HomeViewController: UIViewController {
             print("placeLatitude: \(placeLatitude) and placeLongitude: \(placeLongitude)")
         }
     }
+    
+    func navigateToPlaceDetailScreen(withPlaceDetail:Place) {
+        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "PlaceDetailViewController") as! PlaceDetailViewController
+        vc.placeDetail = withPlaceDetail
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
 }
 
 // MARK: - CollectionView
@@ -110,5 +116,8 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         return CGSize(width: 170,height: 100)
     }
    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        navigateToPlaceDetailScreen(withPlaceDetail: places[indexPath.row] as! Place)
+    }
     
 }

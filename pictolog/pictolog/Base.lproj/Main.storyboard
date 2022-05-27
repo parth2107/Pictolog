@@ -202,20 +202,21 @@
                                         <size key="customSize" width="170" height="120"/>
                                         <connections>
                                             <outlet property="lblSiteName" destination="Sr7-5m-law" id="y8d-2g-zoa"/>
+                                            <outlet property="lblSiteVisitedOn" destination="b5s-aa-qqm" id="sWU-dd-k69"/>
                                             <outlet property="viewSiteCell" destination="21H-J0-wXa" id="dXl-GO-3iC"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Sa-Fk-Kpi">
-                                <rect key="frame" x="328" y="810" width="56" height="56"/>
+                                <rect key="frame" x="343" y="812" width="56" height="56"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="9Sa-Fk-Kpi" secondAttribute="height" multiplier="1:1" id="eoc-q5-HNc"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" image="plus">
+                                <buttonConfiguration key="configuration" style="plain" image="plus-2">
                                     <backgroundConfiguration key="background">
-                                        <color key="backgroundColor" red="0.95294117649999999" green="0.59215686270000001" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </backgroundConfiguration>
                                 </buttonConfiguration>
                                 <connections>
@@ -229,11 +230,11 @@
                             <constraint firstAttribute="trailing" secondItem="obN-Ns-fAm" secondAttribute="trailing" constant="30" id="0AC-ij-Jzr"/>
                             <constraint firstItem="7vp-PP-Isz" firstAttribute="leading" secondItem="sS1-fg-vJa" secondAttribute="leading" constant="30" id="49y-Fr-M4e"/>
                             <constraint firstItem="obN-Ns-fAm" firstAttribute="top" secondItem="A3q-4o-TzJ" secondAttribute="bottom" constant="20.5" id="5gX-2I-byi"/>
-                            <constraint firstAttribute="trailing" secondItem="9Sa-Fk-Kpi" secondAttribute="trailing" constant="30" id="JAL-tB-ekA"/>
+                            <constraint firstAttribute="trailing" secondItem="9Sa-Fk-Kpi" secondAttribute="trailing" constant="15" id="JAL-tB-ekA"/>
                             <constraint firstItem="RSv-wv-zPt" firstAttribute="trailing" secondItem="A3q-4o-TzJ" secondAttribute="trailing" constant="30" id="K5s-uA-Ma3"/>
                             <constraint firstItem="A3q-4o-TzJ" firstAttribute="leading" secondItem="RSv-wv-zPt" secondAttribute="leading" constant="30" id="K5t-he-0KD"/>
                             <constraint firstAttribute="trailing" secondItem="zzj-Yg-C9l" secondAttribute="trailing" constant="30" id="KAC-l9-CY4"/>
-                            <constraint firstAttribute="bottom" secondItem="9Sa-Fk-Kpi" secondAttribute="bottom" constant="30" id="N64-jh-PJq"/>
+                            <constraint firstAttribute="bottom" secondItem="9Sa-Fk-Kpi" secondAttribute="bottom" constant="28" id="N64-jh-PJq"/>
                             <constraint firstAttribute="bottom" secondItem="7vp-PP-Isz" secondAttribute="bottom" constant="30" id="Rtn-86-9aG"/>
                             <constraint firstItem="Ryi-x3-ccy" firstAttribute="leading" secondItem="RSv-wv-zPt" secondAttribute="leading" constant="30" id="VWG-cS-hhC"/>
                             <constraint firstItem="zzj-Yg-C9l" firstAttribute="top" secondItem="sS1-fg-vJa" secondAttribute="top" constant="60" id="WYo-7o-xGv"/>
@@ -519,15 +520,89 @@
             </objects>
             <point key="canvasLocation" x="2382.608695652174" y="-46.205357142857139"/>
         </scene>
+        <!--Place Detail View Controller-->
+        <scene sceneID="RIp-Dm-vrs">
+            <objects>
+                <viewController storyboardIdentifier="PlaceDetailViewController" id="asT-oe-ZGh" customClass="PlaceDetailViewController" customModule="pictolog" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="N24-zK-MYQ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BTG-0A-oH9">
+                                <rect key="frame" x="18" y="80" width="56" height="46"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="left-arrow"/>
+                                <connections>
+                                    <action selector="btnBackTapped:" destination="asT-oe-ZGh" eventType="touchUpInside" id="2j4-Gh-SI5"/>
+                                </connections>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Ov6-fW-X4P">
+                                <rect key="frame" x="30" y="146" width="200.5" height="100"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="May 22, 2022" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zf5-rs-5M6">
+                                        <rect key="frame" x="0.0" y="0.0" width="200.5" height="22.5"/>
+                                        <fontDescription key="fontDescription" name="Quicksand-Regular" family="Quicksand" pointSize="18"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CN Tower" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ewV-1p-BN9">
+                                        <rect key="frame" x="0.0" y="32.5" width="200.5" height="35"/>
+                                        <fontDescription key="fontDescription" name="Quicksand-Medium" family="Quicksand" pointSize="28"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hamilton, ON - CANADA" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G9s-Li-PcD">
+                                        <rect key="frame" x="0.0" y="77.5" width="200.5" height="22.5"/>
+                                        <fontDescription key="fontDescription" name="Quicksand-Regular" family="Quicksand" pointSize="18"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ewR-Lv-r9Z">
+                                <rect key="frame" x="30" y="288" width="354" height="202"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" name="Quicksand-Regular" family="Quicksand" pointSize="15"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="hdx-kL-VQ1"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="ewR-Lv-r9Z" firstAttribute="top" secondItem="Ov6-fW-X4P" secondAttribute="bottom" constant="42" id="2e3-QC-mat"/>
+                            <constraint firstItem="BTG-0A-oH9" firstAttribute="top" secondItem="N24-zK-MYQ" secondAttribute="top" constant="80" id="8KU-kn-m4C"/>
+                            <constraint firstItem="hdx-kL-VQ1" firstAttribute="bottom" secondItem="ewR-Lv-r9Z" secondAttribute="bottom" constant="372" id="Lsf-qO-kCD"/>
+                            <constraint firstItem="Ov6-fW-X4P" firstAttribute="top" secondItem="BTG-0A-oH9" secondAttribute="bottom" constant="20" id="SeQ-D2-gpN"/>
+                            <constraint firstItem="BTG-0A-oH9" firstAttribute="leading" secondItem="N24-zK-MYQ" secondAttribute="leading" constant="18" id="T6N-iW-6nF"/>
+                            <constraint firstItem="ewR-Lv-r9Z" firstAttribute="leading" secondItem="N24-zK-MYQ" secondAttribute="leading" constant="30" id="dhx-h0-WDe"/>
+                            <constraint firstAttribute="trailing" secondItem="ewR-Lv-r9Z" secondAttribute="trailing" constant="30" id="fTP-Bo-UTV"/>
+                            <constraint firstItem="Ov6-fW-X4P" firstAttribute="leading" secondItem="N24-zK-MYQ" secondAttribute="leading" constant="30" id="lBT-pD-pRD"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="lblPlaceName" destination="ewV-1p-BN9" id="R7l-5q-hzb"/>
+                        <outlet property="lblPlaceNote" destination="ewR-Lv-r9Z" id="UwE-hU-GSk"/>
+                        <outlet property="lblPlaceVenue" destination="G9s-Li-PcD" id="MMt-sJ-iSk"/>
+                        <outlet property="lblPlaceVisitedOn" destination="Zf5-rs-5M6" id="sH7-Ar-Yfb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SaU-Jr-JJH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3182.608695652174" y="2.6785714285714284"/>
+        </scene>
     </scenes>
     <resources>
         <image name="dp" width="55" height="55"/>
         <image name="left-arrow" width="32" height="32"/>
         <image name="map" catalog="system" width="128" height="110"/>
         <image name="pictolog-logos_white" width="1200" height="1200"/>
-        <image name="plus" width="32" height="32"/>
         <image name="plus-2" width="32" height="32"/>
         <image name="square.grid.2x2" catalog="system" width="128" height="114"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
