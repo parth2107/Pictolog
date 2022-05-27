@@ -100,6 +100,19 @@ class HomeViewController: UIViewController {
         vc.placeDetail = withPlaceDetail
         self.navigationController?.pushViewController(vc, animated: true)
     }
+    
+    func fetchPlaceFromLatAndLong(latitude: Double, longitude: Double) -> Place! {
+        
+        for place in places {
+            let lat = (place.value(forKeyPath: "latitude") as! Double)
+            let long = (place.value(forKeyPath: "longitude") as! Double)
+            
+            if(lat.isEqual(to: latitude) && long.isEqual(to: longitude)) {
+                return place as? Place
+            }
+        }
+        return nil
+    }
 }
 
 // MARK: - CollectionView
@@ -153,8 +166,11 @@ extension HomeViewController: MKMapViewDelegate {
     
     func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
         
-      guard let artwork = view.annotation as? Artwork else {
-        return
-      }
+        guard let artwork = view.annotation as? Artwork else {
+            return
+        }
+        
+        let selectedPlace = fetchPlaceFromLatAndLong(latitude: artwork.coordinate.latitude, longitude: artwork.coordinate.longitude)
+        navigateToPlaceDetailScreen(withPlaceDetail: selectedPlace!)
     }
 }
