@@ -47,6 +47,8 @@ class HomeViewController: UIViewController {
         mapView.layer.cornerRadius = 10
         btnAddSite.layer.cornerRadius = 10
         
+        collectionViewSites.reloadData()
+        
     }
     
     // MARK: - Actions

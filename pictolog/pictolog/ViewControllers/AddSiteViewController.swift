@@ -100,6 +100,7 @@ class AddSiteViewController: UIViewController {
         
         do {
             try DataManager.shared.saveContext()
+            showSuccessAlert()
           } catch let error as NSError {
             print("Could not save. \(error), \(error.userInfo)")
           }
@@ -110,6 +111,24 @@ class AddSiteViewController: UIViewController {
         imagePicker.allowsEditing = false
         imagePicker.sourceType = .photoLibrary
         present(imagePicker, animated: true, completion: nil)
+    }
+    
+    // MARK: - Other Methods
+    
+    func showSuccessAlert() {
+        
+        let alert = UIAlertController(
+            title: "Success",
+            message: "New Place has been added in your journal successfully",
+            preferredStyle: UIAlertController.Style.alert
+        )
+
+        alert.addAction(
+            UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler:{ (_: UIAlertAction!) in
+            self.navigationController?.popViewController(animated: true)
+        }))
+        
+        self.present(alert, animated: true, completion: nil)
     }
     
 }
