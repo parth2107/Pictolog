@@ -89,8 +89,16 @@ class AddSiteViewController: UIViewController {
         let province = DataManager.shared.createProvince(name: forProvince, country: country)
         let city = DataManager.shared.createCity(name: forCity, province: province, country: country)
         
+        var imagesDataArr:[Data] = []
+        for image in images {
+            if let imageData = image.pngData() {
+                imagesDataArr.append(imageData)
+            }
+        }
         
-        let newPlace = DataManager.shared.createPlace(name: placeName, city: city, province: province, country: country, visitedOn: dateFormatter.date(from:visitedOn)!, latitude: latitude, longitude: longitude, note: note)
+        let images = DataManager.shared.createImage(imagesData: imagesDataArr)
+        
+        let newPlace = DataManager.shared.createPlace(name: placeName, city: city, province: province, country: country, visitedOn: dateFormatter.date(from:visitedOn)!, latitude: latitude, longitude: longitude, note: note, images: images)
         
         
 //        let entity = NSEntityDescription.entity(forEntityName: "Place", in: _managedContext)!

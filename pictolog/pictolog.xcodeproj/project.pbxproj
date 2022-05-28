@@ -30,6 +30,7 @@
 		595AFEB228388F1500A26655 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 595AFEB128388F1500A26655 /* DataManager.swift */; };
 		595AFED4283B096C00A26655 /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 595AFED3283B096C00A26655 /* ImageCollectionViewCell.swift */; };
 		59BF0B6728412E780083B302 /* PlaceDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59BF0B6628412E780083B302 /* PlaceDetailViewController.swift */; };
+		59BF0B692841C4530083B302 /* PlaceImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59BF0B682841C4530083B302 /* PlaceImageCollectionViewCell.swift */; };
 		59D9BA00283137EA000F74B7 /* utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D9B9FF283137EA000F74B7 /* utility.swift */; };
 /* End PBXBuildFile section */
 
@@ -78,6 +79,7 @@
 		595AFEB128388F1500A26655 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		595AFED3283B096C00A26655 /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		59BF0B6628412E780083B302 /* PlaceDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceDetailViewController.swift; sourceTree = "<group>"; };
+		59BF0B682841C4530083B302 /* PlaceImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		59D9B9FF283137EA000F74B7 /* utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = utility.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -169,6 +171,7 @@
 				594A5B48282FFBF100ECC497 /* SiteCollectionViewCell.swift */,
 				595AFED3283B096C00A26655 /* ImageCollectionViewCell.swift */,
 				59BF0B6628412E780083B302 /* PlaceDetailViewController.swift */,
+				59BF0B682841C4530083B302 /* PlaceImageCollectionViewCell.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -340,6 +343,7 @@
 				594A5B49282FFBF100ECC497 /* SiteCollectionViewCell.swift in Sources */,
 				594A5B04282EA6CD00ECC497 /* AppDelegate.swift in Sources */,
 				595AFED4283B096C00A26655 /* ImageCollectionViewCell.swift in Sources */,
+				59BF0B692841C4530083B302 /* PlaceImageCollectionViewCell.swift in Sources */,
 				594A5B45282FF4AC00ECC497 /* AddSiteViewController.swift in Sources */,
 				59D9BA00283137EA000F74B7 /* utility.swift in Sources */,
 				595AFEB228388F1500A26655 /* DataManager.swift in Sources */,

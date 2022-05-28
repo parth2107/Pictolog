@@ -14,12 +14,17 @@ class PlaceDetailViewController: UIViewController {
     @IBOutlet weak var lblPlaceVenue: UILabel!
     @IBOutlet weak var lblPlaceNote: UITextView!
     
+    @IBOutlet weak var collectionViewImages: UICollectionView!
+    
     var placeDetail:Place?
+    var placePhotos:[Data]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        collectionViewImages.dataSource = self
+        collectionViewImages.delegate = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -41,6 +46,9 @@ class PlaceDetailViewController: UIViewController {
         let placeCountry = placeDetail!.value(forKeyPath: "country") as! Country
         let placeCountryName = placeCountry.value(forKeyPath: "name") as! String
         
+        let photos = placeDetail!.value(forKeyPath: "image") as! Image
+        placePhotos = photos.value(forKeyPath: "photo") as! [Data]
+        
         lblPlaceVenue.text! = placeCityName + ", " + placeProvinceName + " - " + placeCountryName
     }
     
@@ -48,4 +56,20 @@ class PlaceDetailViewController: UIViewController {
         self.navigationController?.popViewController(animated: true)
     }
 
+}
+
+extension PlaceDetailViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        placePhotos!.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PlaceImageCollectionViewCell", for: indexPath) as! PlaceImageCollectionViewCell
+        cell.imgViewPlace.image = UIImage(data: placePhotos![indexPath.row])
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: 100,height: 100)
+    }
 }

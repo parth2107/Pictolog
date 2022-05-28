@@ -17,10 +17,11 @@
         <relationship name="province" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Province" inverseName="country" inverseEntity="Province"/>
     </entity>
     <entity name="Image" representedClassName="Image" syncable="YES" codeGenerationType="class">
-        <attribute name="created_At" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="created_at" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="gallary_id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
-        <attribute name="photo" optional="YES" attributeType="Binary"/>
+        <attribute name="photo" optional="YES" attributeType="Transformable" customClassName="[Data]"/>
         <attribute name="updated_at" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <relationship name="place" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Place" inverseName="image" inverseEntity="Place"/>
     </entity>
     <entity name="Place" representedClassName="Place" syncable="YES" codeGenerationType="class">
         <attribute name="created_at" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
@@ -34,6 +35,7 @@
         <attribute name="visited_on" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <relationship name="city" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="City" inverseName="place" inverseEntity="City"/>
         <relationship name="country" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Country" inverseName="place" inverseEntity="Country"/>
+        <relationship name="image" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Image" inverseName="place" inverseEntity="Image"/>
         <relationship name="province" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Province" inverseName="place" inverseEntity="Province"/>
     </entity>
     <entity name="Province" representedClassName="Province" syncable="YES" codeGenerationType="class">
@@ -45,10 +47,10 @@
         <relationship name="place" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Place" inverseName="province" inverseEntity="Place"/>
     </entity>
     <elements>
-        <element name="City" positionX="-63" positionY="54" width="128" height="119"/>
-        <element name="Country" positionX="-36" positionY="72" width="128" height="119"/>
-        <element name="Image" positionX="-18" positionY="81" width="128" height="89"/>
-        <element name="Place" positionX="-63" positionY="-36" width="128" height="209"/>
-        <element name="Province" positionX="-54" positionY="63" width="128" height="119"/>
+        <element name="City" positionX="-12.4921875" positionY="-41.3046875" width="128" height="119"/>
+        <element name="Country" positionX="-174.52734375" positionY="237.875" width="128" height="119"/>
+        <element name="Image" positionX="381.99609375" positionY="-26" width="128" height="118"/>
+        <element name="Place" positionX="381.8125" positionY="141.8125" width="128" height="238"/>
+        <element name="Province" positionX="211.078125" positionY="-92.046875" width="128" height="119"/>
     </elements>
 </model>

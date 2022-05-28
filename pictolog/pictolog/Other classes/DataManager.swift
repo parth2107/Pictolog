@@ -81,7 +81,16 @@ class DataManager {
         return city
     }
     
-    func createPlace(name: String, city: City, province: Province, country: Country, visitedOn: Date, latitude: Double, longitude: Double, note: String) -> Place {
+    func createImage(imagesData: [Data]) -> Image {
+        let image = Image(context: persistentContainer.viewContext)
+        image.photo = imagesData
+//        image.gallary_id =
+        image.created_at = Date()
+        image.updated_at = Date()
+        return image
+    }
+    
+    func createPlace(name: String, city: City, province: Province, country: Country, visitedOn: Date, latitude: Double, longitude: Double, note: String, images: Image) -> Place {
         let place = Place(context: persistentContainer.viewContext)
         place.name = name
         place.city = city
@@ -91,6 +100,7 @@ class DataManager {
         place.latitude = latitude
         place.longitude = longitude
         place.note = note
+        place.image = images
         place.created_at = Date()
         place.updated_at = Date()
         return place
