@@ -55,6 +55,12 @@ class PlaceDetailViewController: UIViewController {
     @IBAction func btnBackTapped(_ sender: UIButton) {
         self.navigationController?.popViewController(animated: true)
     }
+    
+    func navigateToImageVC(withimageData: Data) {
+        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ImageViewController") as! ImageViewController
+        vc.imageData = withimageData
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
 
 }
 
@@ -71,5 +77,9 @@ extension PlaceDetailViewController: UICollectionViewDelegate, UICollectionViewD
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: 100,height: 100)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        navigateToImageVC(withimageData: placePhotos![indexPath.row])
     }
 }

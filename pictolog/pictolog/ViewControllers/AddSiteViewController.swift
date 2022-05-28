@@ -139,6 +139,12 @@ class AddSiteViewController: UIViewController {
         self.present(alert, animated: true, completion: nil)
     }
     
+    func navigateToImageVC(withimageData: Data) {
+        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ImageViewController") as! ImageViewController
+        vc.imageData = withimageData
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
 }
 
 extension AddSiteViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
@@ -159,6 +165,10 @@ extension AddSiteViewController: UICollectionViewDataSource, UICollectionViewDel
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: 100,height: 100)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        navigateToImageVC(withimageData: images[indexPath.row].pngData()!)
     }
     
     // MARK: - UIImagePickerControllerDelegate Methods

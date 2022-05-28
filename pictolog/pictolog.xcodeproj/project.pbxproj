@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		592E3FFB2841CD3F00562C03 /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 592E3FFA2841CD3F00562C03 /* ImageViewController.swift */; };
 		594A5B04282EA6CD00ECC497 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 594A5B03282EA6CD00ECC497 /* AppDelegate.swift */; };
 		594A5B06282EA6CD00ECC497 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 594A5B05282EA6CD00ECC497 /* SceneDelegate.swift */; };
 		594A5B08282EA6CD00ECC497 /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 594A5B07282EA6CD00ECC497 /* InitialViewController.swift */; };
@@ -52,6 +53,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		592E3FFA2841CD3F00562C03 /* ImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
 		594A5B00282EA6CD00ECC497 /* pictolog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = pictolog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		594A5B03282EA6CD00ECC497 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		594A5B05282EA6CD00ECC497 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -172,6 +174,7 @@
 				595AFED3283B096C00A26655 /* ImageCollectionViewCell.swift */,
 				59BF0B6628412E780083B302 /* PlaceDetailViewController.swift */,
 				59BF0B682841C4530083B302 /* PlaceImageCollectionViewCell.swift */,
+				592E3FFA2841CD3F00562C03 /* ImageViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -342,6 +345,7 @@
 				594A5B08282EA6CD00ECC497 /* InitialViewController.swift in Sources */,
 				594A5B49282FFBF100ECC497 /* SiteCollectionViewCell.swift in Sources */,
 				594A5B04282EA6CD00ECC497 /* AppDelegate.swift in Sources */,
+				592E3FFB2841CD3F00562C03 /* ImageViewController.swift in Sources */,
 				595AFED4283B096C00A26655 /* ImageCollectionViewCell.swift in Sources */,
 				59BF0B692841C4530083B302 /* PlaceImageCollectionViewCell.swift in Sources */,
 				594A5B45282FF4AC00ECC497 /* AddSiteViewController.swift in Sources */,
