@@ -82,11 +82,16 @@ class HomeViewController: UIViewController {
             let placeName = (place.value(forKeyPath: "name") as! String)
             let placeLatitude = (place.value(forKeyPath: "latitude") as! Double)
             let placeLongitude = (place.value(forKeyPath: "longitude") as! Double)
+            var placeVisitedOn:String = ""
+            
+            if let placeDateOfVisit = place.value(forKeyPath: "visited_on") as? NSDate {
+                placeVisitedOn = convertDateString(date: placeDateOfVisit)
+            }
             
             // Show artwork on map
             let artwork = Artwork(
               title: placeName,
-              locationName: placeName,
+              locationName: placeVisitedOn,
               discipline: "Place",
               coordinate: CLLocationCoordinate2D(latitude: placeLatitude, longitude: placeLongitude))
             

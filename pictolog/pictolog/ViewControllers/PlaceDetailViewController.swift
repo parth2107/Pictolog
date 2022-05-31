@@ -12,7 +12,7 @@ class PlaceDetailViewController: UIViewController {
     @IBOutlet weak var lblPlaceVisitedOn: UILabel!
     @IBOutlet weak var lblPlaceName: UILabel!
     @IBOutlet weak var lblPlaceVenue: UILabel!
-    @IBOutlet weak var lblPlaceNote: UITextView!
+    @IBOutlet weak var lblPlaceNote: UILabel!
     
     @IBOutlet weak var collectionViewImages: UICollectionView!
     
@@ -31,6 +31,10 @@ class PlaceDetailViewController: UIViewController {
         
         if let placeName = placeDetail?.value(forKeyPath: "name") as? String {
             lblPlaceName.text! = placeName
+        }
+        
+        if let placeNote = placeDetail?.value(forKeyPath: "note") as? String {
+            lblPlaceNote.text! = placeNote
         }
         
         if let placeDateOfVisit = placeDetail?.value(forKeyPath: "visited_on") as? NSDate {
