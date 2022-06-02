@@ -14,7 +14,6 @@ class AddSiteViewController: UIViewController {
     @IBOutlet weak var txtFieldCity: UITextField!
     @IBOutlet weak var txtFieldProvince: UITextField!
     @IBOutlet weak var txtFieldCountry: UITextField!
-    @IBOutlet weak var txtFieldVisitedOn: UITextField!
     @IBOutlet weak var txtFieldNote: UITextField!
     @IBOutlet weak var txtFieldLatitude: UITextField!
     @IBOutlet weak var txtFieldLongitude: UITextField!
@@ -26,6 +25,9 @@ class AddSiteViewController: UIViewController {
     
     var images:[UIImage] = []
     let imagePicker = UIImagePickerController()
+    
+    @IBOutlet weak var datePickerCompact: UIDatePicker!
+    let datePicker = UIDatePicker()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -62,11 +64,6 @@ class AddSiteViewController: UIViewController {
             return
         }
         
-        guard let visitedOn = txtFieldVisitedOn.text else {
-            print("Invalid Visited On")
-            return
-        }
-        
         guard let note = txtFieldNote.text else {
             print("Invalid Note")
             return
@@ -97,14 +94,9 @@ class AddSiteViewController: UIViewController {
         }
         
         let images = DataManager.shared.createImage(imagesData: imagesDataArr)
+
+        let newPlace = DataManager.shared.createPlace(name: placeName, city: city, province: province, country: country, visitedOn: dateFormatter.date(from:dateFormatter.string(from: (datePickerCompact.date)))!, latitude: latitude, longitude: longitude, note: note, images: images)
         
-        let newPlace = DataManager.shared.createPlace(name: placeName, city: city, province: province, country: country, visitedOn: dateFormatter.date(from:visitedOn)!, latitude: latitude, longitude: longitude, note: note, images: images)
-        
-        
-//        let entity = NSEntityDescription.entity(forEntityName: "Place", in: _managedContext)!
-//        let site = NSManagedObject(entity: entity, insertInto: _managedContext)
-//        site.setValue(txtFieldSiteName.text!, forKey: "name")
-////        site.setValue(txtFieldCity.text!, forKey: "city")
         
         do {
             try DataManager.shared.saveContext()

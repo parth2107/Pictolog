@@ -11,6 +11,7 @@ import MapKit
 
 class HomeViewController: UIViewController {
 
+    @IBOutlet weak var lblGreetingMessage: UILabel!
     @IBOutlet weak var segmentForView: UISegmentedControl!
     @IBOutlet weak var imgViewProfilePic: UIImageView!
     
@@ -40,6 +41,8 @@ class HomeViewController: UIViewController {
         } catch let error as NSError {
             print("Could not fetch. \(error), \(error.userInfo)")
           }
+        
+        lblGreetingMessage.text = greetingLogic()
         
         addPlacesAsAnnotationsInMapView(places)
         
