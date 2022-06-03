@@ -23,3 +23,10 @@ class pictologButton: UIButton {
     }
     
 }
+
+extension String {
+    func trim() -> String{
+        let strTrimmed = (NSString(string:self)).trimmingCharacters(in: CharacterSet.whitespaces)
+        return strTrimmed
+    }
+}

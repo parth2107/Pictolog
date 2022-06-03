@@ -44,38 +44,45 @@ class AddSiteViewController: UIViewController {
     
     @IBAction func btnAddTapped(_ sender: UIButton) {
         
-        guard let placeName = txtFieldSiteName.text else {
-            print("Invalid Place Name")
+        if txtFieldSiteName.text!.trim().isEmpty {
+            showAlertView(title: "Error", message: "Invalid Place Name")
             return
         }
         
-        guard let forCity = txtFieldCity.text else {
-            print("Invalid City")
+        if txtFieldCity.text!.trim().isEmpty {
+            showAlertView(title: "Error", message: "Invalid City")
             return
         }
         
-        guard let forProvince = txtFieldProvince.text else {
-            print("Invalid province")
+        if txtFieldProvince.text!.trim().isEmpty {
+            showAlertView(title: "Error", message: "Invalid Province")
             return
         }
         
-        guard let forCountry = txtFieldCountry.text else {
-            print("Invalid Country")
+        if txtFieldCountry.text!.trim().isEmpty {
+            showAlertView(title: "Error", message: "Invalid Country")
             return
         }
         
-        guard let note = txtFieldNote.text else {
-            print("Invalid Note")
+        if txtFieldNote.text!.trim().isEmpty {
+            showAlertView(title: "Error", message: "Invalid Note")
             return
         }
+        
+        let placeName = txtFieldSiteName.text!.trim()
+        let forCity = txtFieldCity.text!.trim()
+        let forProvince = txtFieldProvince.text!.trim()
+        let forCountry = txtFieldCountry.text!.trim()
+        let note = txtFieldNote.text!.trim()
+        
         
         guard let latitude = Double(txtFieldLatitude.text!) else {
-            print("Invalid Latitude")
+            showAlertView(title: "Error", message: "Invalid Latitude")
             return
         }
         
         guard let longitude = Double(txtFieldLongitude.text!) else {
-            print("Invalid Longitude")
+            showAlertView(title: "Error", message: "Invalid Longitude")
             return
         }
         
@@ -100,7 +107,7 @@ class AddSiteViewController: UIViewController {
         
         do {
             try DataManager.shared.saveContext()
-            showSuccessAlert()
+            showAlertView(title: "Success", message: "New Place has been added in your journal successfully")
           } catch let error as NSError {
             print("Could not save. \(error), \(error.userInfo)")
           }
@@ -115,17 +122,19 @@ class AddSiteViewController: UIViewController {
     
     // MARK: - Other Methods
     
-    func showSuccessAlert() {
+    func showAlertView(title: String, message: String) {
         
         let alert = UIAlertController(
-            title: "Success",
-            message: "New Place has been added in your journal successfully",
+            title: title,
+            message: message,
             preferredStyle: UIAlertController.Style.alert
         )
 
         alert.addAction(
             UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler:{ (_: UIAlertAction!) in
-            self.navigationController?.popViewController(animated: true)
+                if(title == "Success") {
+                    self.navigationController?.popViewController(animated: true)
+                }
         }))
         
         self.present(alert, animated: true, completion: nil)
